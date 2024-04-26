@@ -203,7 +203,7 @@ create trigger  tr_check_Room_NotAllow
     on BookingDetail
     for each row
     begin
-        if DAY(startDate) = DAY(new.startDate) and   DAY(endDate) = DAY(new.endDate) and roomId = roomId
+        if DAY(startDate) = DAY(new.startDate) and  DAY(endDate) = DAY(new.endDate) and roomId = roomId
             then
                 signal sqlstate '45000' set message_text  = 'Phòng này đã có người đặt trong thời gian này, vui lòng chọn thời gian khác';
         end if;
